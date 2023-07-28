@@ -11,14 +11,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 </head>
 <style>
     body {
         background-image: url('./pic/back01.jpg');
         background-size: cover;
-        font-family:'';
-        
+        font-family: '';
+
     }
 
     .about {
@@ -105,14 +105,14 @@
             <div class="col-12  col-md-6"><img src="https://picsum.photos/id/213/600/300" width="100%"></div>
         </div>
     </div>
-    <!-- 最後的功能 -->
+    <!-- 最後的功能 投票-->
     <div class="container ">
         <div class="row  flex-column align-items-center mt-3 ">
             <div class="col-3">
-
+                <h2 id="voteTitle"></h2>
                 <div class=" mt-3 ">
                     <input class=" mybtn" type="radio" name="opt">
-                    <label class="">
+                    <label id="voteOpt1">
                         Default radio
                     </label>
                 </div>
@@ -121,7 +121,7 @@
 
                 <div class=" mt-3">
                     <input class=" mybtn" type="radio" name="opt">
-                    <label class="">
+                    <label id="voteOpt2">
                         Default checked radio
                     </label>
                 </div>
@@ -130,7 +130,7 @@
 
                 <div class=" mt-3">
                     <input class=" mybtn" type="radio" name="opt" checked>
-                    <label class="">
+                    <label id="voteOpt3">
                         Default checked radio
                     </label>
                 </div>
@@ -139,7 +139,7 @@
 
                 <div class=" mt-3">
                     <input class=" mybtn" type="radio" name="opt">
-                    <label class="">
+                    <label id="voteOpt4">
                         Default checked radio
                     </label>
                 </div>
@@ -154,6 +154,7 @@
         </div>
 
     </div>
+    <!-- 最後的功能 結果統計-->
     <div class="row  ">
         <div class="col-12">
 
@@ -173,10 +174,7 @@
 
     $(document).ready(function () {
 
-
         $(window).scroll(function () {
-
-
             let scrollVal = $(this).scrollTop();
             console.log(scrollVal);
             if (scrollVal >= 450) {
@@ -186,8 +184,41 @@
             if (scrollVal < 450) {
 
                 $('.container').css("background-image", "url('./pic/back01.jpg')");
-                $('.contianer').css('background-size','cover');
+                $('.contianer').css('background-size', 'cover');
             }
         })
+
+        function voteOk(){
+
+           
+        }
+        // $('.title')
+        voteObj={
+            table:'vote',
+            subject_id:1,            
+
+        }
+        
+        $.post('./api/vote.php',voteObj,(res)=>{
+            // console.log(res);
+            // console.log(res);
+            res=res.split(',');
+            obj={};
+            res.forEach(function(value,key){
+                tmp=value.split(':');
+                obj[tmp[0]]=tmp[1];
+                
+            });
+            console.log(obj);
+            $('#voteTitle').text(obj.title);
+            $('#voteOpt1').text(obj.opt1);
+            $('#voteOpt2').text(obj.opt2);
+            $('#voteOpt3').text(obj.opt3);
+            $('#voteOpt4').text(obj.opt4);
+        
+        })
+        
+
+
     })
 </script>
