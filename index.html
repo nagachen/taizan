@@ -18,6 +18,8 @@
         background-image: url('./pic/back01.jpg');
         background-size: cover;
         font-family: '';
+        font-weight: 600;
+        position: relative;
 
     }
 
@@ -32,9 +34,6 @@
         width: 50vw;
     }
 
-    .about>div {
-        margin-top: 20px;
-    }
 
     .mybtn {
         width: 30px;
@@ -52,7 +51,7 @@
     }
 
     .row {
-        margin-top: 10px;
+        margin-top: 40px;
     }
 </style>
 
@@ -61,7 +60,11 @@
     <div class="container-fluid ">
         <div class="row">
             <div class="col-12   ">
-               <div class="myDiv"><img src="./pic/title.jpg" width="100%" ></div> 
+                <div class="myDiv" style="position:relative"><img src="./pic/title.jpg"  width="100%">
+                    <a href="#ffxvi" style="display:block;width:30%;height:calc(100vw * 0.65 * 0.5);position:absolute;left:10%;top:5%"></a>
+                    <a href="#armored" style="display:block;width:30%;height:calc(100vw * 0.65 * 0.5);position:absolute;right:10%;top:5%"></a>
+                </div>
+
             </div>
         </div>
     </div>
@@ -71,7 +74,7 @@
     <div class="container about mt-5">
         <div class="row d-flex flex-wrap-reverse">
             <div class="col-12   ">
-                <h3 class="fw-semibold text-center">FINAL FANTASY XVI一週突破300萬套</h3>
+                <h2 class="fw-semibold text-center" id="ffxvi">FINAL FANTASY XVI一週突破300萬套</h2>
                 &emsp;&emsp;你也是那300萬份之一嗎「吉田直樹」領軍開、睽違六有的『FF』系列本篇最新作『FINAL FANTASY
                 XVI』全球熱銷突破300萬套，如此強大的銷售套數，究竟有什麼魅力和特色能讓玩家買單呢？
             </div>
@@ -79,31 +82,42 @@
         </div>
 
         <div class="row d-flex flex-wrap-reverse">
-            <div class="col-12  col-md-6 ">
-                <h3 class="fw-semibold">特色1.相信吉田、可以期待</h3>
+            <div class="col-12  col-md-6 d-flex flex-column justify-content-around">
+                <h2 class="fw-semibold text-center">特色1.相信吉田、可以期待</h2>
+                <P>
+                    &emsp;&emsp;由於FFXV更換製作團隊,導致FFXV成品不如預期，但這次FFXVI將由把FFXIV起死回生的製作人吉田直樹領軍製作。相信吉田、可以期待
 
-                &emsp;&emsp;由於FFXV更換製作團隊,導致FFXV成品不如預期，但這次FFXVI將由把FFXIV起死回生的製作人吉田直樹領軍製作。相信吉田、可以期待
+                </P>
+                <P>
+
+                </P>
             </div>
             <div class="col-12  col-md-6">
                 <div class="myDiv"><img src="./pic/sp1.jpg" width="100%"></div>
             </div>
         </div>
         <div class="row d-flex flex-wrap-reverse">
-            <div class="col-12  col-md-6 ">
-                <h3 class="fw-semibold">特色2.「劇情聚焦」和「動作聚焦」兩種模式</h3>
-
-                &emsp;&emsp;為了不熟悉動作遊戲的玩家，本作也準備了許多好用的功能，這次進入遊戲後就能選擇「劇情聚焦」和「動作聚焦」兩種模式。其實兩個模式沒有任何差別，只差在劇情聚焦模式中，一開始就幫你裝備上幾個外掛飾品，絕對能夠通行無阻地玩到遊戲全破為止。選擇了動作聚焦的玩家如果真的遇到阻礙，也一樣能裝備上那些超強飾品，打倒強力怪物。
+            <div class="col-12  col-md-6 d-flex flex-column justify-content-around">
+                <h2 class="fw-semibold text-center">特色2.「劇情聚焦」和「動作聚焦」兩種模式</h2>
+                <P>
+                    &emsp;&emsp;為了不熟悉動作遊戲的玩家，本作也準備了許多好用的功能，這次進入遊戲後就能選擇「劇情聚焦」和「動作聚焦」兩種模式。其實兩個模式沒有任何差別，只差在劇情聚焦模式中，一開始就幫你裝備上幾個外掛飾品，絕對能夠通行無阻地玩到遊戲全破為止。選擇了動作聚焦的玩家如果真的遇到阻礙，也一樣能裝備上那些超強飾品，打倒強力怪物。
+                </P>
+                <P></P>
             </div>
             <div class="col-12  col-md-6">
                 <div class="myDiv"><img src="./pic/sp2.jpg" width="100%"></div>
             </div>
         </div>
         <div class="row d-flex flex-wrap-reverse">
-            <div class="col-12  col-md-6 ">
-                <h3 class="fw-semibold">特色3.召喚獸技能玩法多元化自由度高</h3>
+            <div class="col-12  col-md-6 d-flex flex-column justify-content-around">
+                <h2 class="fw-semibold text-center">特色3.召喚獸技能玩法多元化自由度高</h2>
+                <P>
+                    &emsp;&emsp;召喚獸是《Final Fantasy
+                    XVI》的一大重點，這反映在戰鬥系統之上：玩家可以裝備最多三個召喚獸，每個召喚獸都有一種固有技能（按O鍵使用），例如Ifrit是突進、Garuda是捕捉，而Titan則是格檔。另外每款召喚獸可以再攜帶兩個主動技能。剛開始時可能會因為按鍵太多而會手忙腳亂，不過在熟習之後就可將普通攻擊、普通魔法和召喚獸技能交替組合使用，打出各種華麗的連招。
+                </P>
+                <P>
 
-                &emsp;&emsp;召喚獸是《Final Fantasy
-                XVI》的一大重點，這反映在戰鬥系統之上：玩家可以裝備最多三個召喚獸，每個召喚獸都有一種固有技能（按O鍵使用），例如Ifrit是突進、Garuda是捕捉，而Titan則是格檔。另外每款召喚獸可以再攜帶兩個主動技能。剛開始時可能會因為按鍵太多而會手忙腳亂，不過在熟習之後就可將普通攻擊、普通魔法和召喚獸技能交替組合使用，打出各種華麗的連招。
+                </P>
 
             </div>
             <div class="col-12  col-md-6">
@@ -114,9 +128,12 @@
 
 
         <div class="row d-flex flex-wrap-reverse">
-            <div class="col-12  col-md-6 ">
-                <h3 class="fw-semibold">特色4.剌激大場面的召喚獸大獸</h3>
-                &emsp;&emsp;中後期的召喚獸合戰非常精彩而且充滿速度感，絕對不是慢吞吞又無聊的劇情戰鬥，非常值得一玩。尤其是對抗泰坦的一戰，實在非常讓人驚艷。
+            <div class="col-12  col-md-6 d-flex flex-column justify-content-around">
+                <h2 class="fw-semibold text-center">特色4.剌激大場面的召喚獸大獸</h2>
+                <P>
+                    &emsp;&emsp;中後期的召喚獸合戰非常精彩而且充滿速度感，絕對不是慢吞吞又無聊的劇情戰鬥，非常值得一玩。尤其是對抗泰坦的一戰，實在非常讓人驚艷。
+                </P>
+                <P></P>
             </div>
             <div class="col-12  col-md-6">
                 <div class="myDiv"><img src="./pic/sp4.jpg" width="100%"></div>
@@ -126,11 +143,14 @@
 
 
         <div class="row d-flex flex-wrap-reverse">
-            <div class="col-12  col-md-6 ">
-                <h3 class="fw-semibold">特色5.米津玄師為《FINAL FANTASY XVI》量身訂製的最新單曲</h3>
-
-                &emsp;&emsp;月を見ていた〉是米津玄師為《FINAL FANTASY XVI》量身訂製的最新單曲，以磅礡的樂曲和濃厚的情緒感動聽眾。 歌曲創作過程和遊戲團隊一起歷時三年開發，結合了《FINAL
-                FANTASY》史詩般的世界觀，充滿對遊戲故事本身的共鳴
+            <div class="col-12  col-md-6 d-flex flex-column justify-content-around">
+                <h2 class="fw-semibold text-center">特色5.米津玄師為《FINAL FANTASY XVI》量身訂製的最新單曲</h2>
+                <P>
+                    &emsp;&emsp;月を見ていた〉是米津玄師為《FINAL FANTASY XVI》量身訂製的最新單曲，以磅礡的樂曲和濃厚的情緒感動聽眾。
+                    歌曲創作過程和遊戲團隊一起歷時三年開發，結合了《FINAL
+                    FANTASY》史詩般的世界觀，充滿對遊戲故事本身的共鳴
+                </P>
+                <P></P>
             </div>
 
             <div class="col-12  col-md-6">
@@ -150,7 +170,7 @@
     <div class="container about mt-5">
         <div class="row d-flex ">
             <div class="col-12   ">
-                <h3 class="fw-semibold text-center">見證強化人生存的姿態！《機戰傭兵 VI：境界天火》</h3>
+                <h2 class="fw-semibold text-center mb-4" id="armored">見證強化人生存的姿態！《機戰傭兵 VI：境界天火》</h2>
                 &emsp;&emsp;由曾製作《艾爾登法環》及《黑暗靈魂》的 FromSoftware 及萬代南夢宮娛樂攜手推出的最新作品《機戰傭兵 VI：境界天火》，是相隔 9
                 年再次復出的《機戰傭兵》系列最新作，活用雙方至今透過共同合作開發獲得的知識及經驗，重新審視系列核心概念而成。承襲系列一貫特色，玩家可以組裝與操作自己專屬的機甲，縱橫規模龐大的開闊立體舞台，以射擊與近身戰鬥等充滿魄力的動作體驗緊湊的全方位戰鬥與刺激滿點的頭目戰。
             </div>
@@ -163,128 +183,147 @@
                 </div>
             </div>
 
-        </div>
-        <div class="col-12  col-md-6 ">
-            <h3 class="fw-semibold">特色1.「衝擊值」與「踉蹌」</h3>
+            <div class="col-12  col-md-6 d-flex flex-column justify-content-around">
+                <h2 class="fw-semibold text-center">特色1.「衝擊值」與「踉蹌」</h2>
+                <P>
+                    &emsp;&emsp;本作的特色戰鬥機制是「衝擊值」與「踉蹌」，這個機制有點類似於《隻狼》的體幹質。只要對敵人持續進行有效攻擊，就會累積衝擊值，而衝擊值累積到滿就會觸發「踉蹌」。此時所有傷害都會變成直擊傷害，而且可以短時間內進行單方面的攻擊。
 
-            &emsp;&emsp;本作的特色戰鬥機制是「衝擊值」與「踉蹌」，這個機制有點類似於《隻狼》的體幹質。只要對敵人持續進行有效攻擊，就會累積衝擊值，而衝擊值累積到滿就會觸發「踉蹌」。此時所有傷害都會變成直擊傷害，而且可以短時間內進行單方面的攻擊。
+                </P>
+                <P></P>
+
+            </div>
 
 
+            <div class="row  ">
+                <div class="col-12  col-md-6 ">
+                    <div class="myDiv">
+                        <img src="./pic/fs2.jpg" width="100%">
+                    </div>
+                </div>
 
-        </div>
+                <div class="col-12  col-md-6 d-flex flex-column justify-content-around">
+                    <h2 class="fw-semibold text-center">特色2.組裝</h2>
+                    <P>
+                        &emsp;&emsp;本作獲勝的關鍵，除了觀察與戰鬥外，就是操作的機甲由自己組裝。本次可以組裝的部位包括了「武器」、「框架」、「內裝」三項組裝大項目。武器包括了左手、右手、左肩、右肩四個部位，框架包括了頭部、核心、手部、足部，內裝則有推進器、武器管制系統、發動機。
+                    </P>
+                    <P></P>
+                </div>
+            </div>
+            <div class="row  ">
+                <div class="col-12  col-md-6">
+                    <div class="myDiv">
+                        <img src="./pic/fs3.jpg" width="100%">
+                    </div>
+                </div>
 
+                <div class="col-12  col-md-6 d-flex flex-column justify-content-around">
+                    <h2 class="fw-semibold text-center">特色3.難度非凡的頭目戰</h2>
+                    <P> &emsp;&emsp;召系列作裡巨大的頭目戰回來了，這次遇到的金屬怪物將較以往都更加龐大與駭然。
+                        「這些強敵的種類非常廣泛，有各種形狀和尺寸。」「巨型戰鬥直升機、重裝機動砲塔、還有無人駕駛的重型破壞機器，全都設定好，將無差別大肆轟炸入侵者。《機戰傭兵VI》將提供大量爆炸性的戰鬥體驗，驅使玩家突破重重困境，戰勝這些碩大無比的異形機甲。」
+                    </P>
+                    <P></P>
 
-        <div class="row  ">
-            <div class="col-12  col-md-6">
-                <div class="myDiv">
-                    <img src="./pic/fs2.jpg" width="100%">
                 </div>
             </div>
 
-            <div class="col-12  col-md-6 ">
-                <h3 class="fw-semibold">特色2.組裝</h3>
+            <div class="row ">
+                <div class="col-12  col-md-6">
+                    <div class="myDiv">
+                        <img src="./pic/fs4.jpg" width="100%">
+                    </div>
+                </div>
 
-                &emsp;&emsp;本作獲勝的關鍵，除了觀察與戰鬥外，就是操作的機甲由自己組裝。本次可以組裝的部位包括了「武器」、「框架」、「內裝」三項組裝大項目。武器包括了左手、右手、左肩、右肩四個部位，框架包括了頭部、核心、手部、足部，內裝則有推進器、武器管制系統、發動機。
+                <div class="col-12  col-md-6 d-flex flex-column justify-content-around">
+                    <h2 class="fw-semibold text-center">特色4.競技場回歸</h2>
+                    <P>&emsp;&emsp;對於《機戰傭兵》的老粉絲而言，還有更多好消息。備受喜愛的競技場模式在《機戰傭兵VI》以模擬訓練的方式回歸，玩家可以在其中與各式各樣的特製機甲進行一系列戰鬥。</P>
+                    <P></P>
+                </div>
+            </div>
+
+            <div class="row ">
+                <div class="col-12 col-md-6 ">
+                    <div class="myDiv">
+                        <iframe width="100%" height="484" src="https://www.youtube.com/embed/UKKChvEP6gk"
+                            title="《機戰傭兵™VI 境界天火™》劇情宣傳影片" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                <div class="col-12  col-md-6  d-flex flex-column justify-content-around ">
+                    <h2 class="fw-semibold text-center">遊戲宣傳影片展示</h2>
+                    <P> &emsp;&emsp;在設定為本篇故事前傳的最新劇情宣傳影片中，玩家將可以看到在指導手沃爾特的指示之下，以幾近冷酷的執念完成任務的強化人們最後的生存姿態。玩家角色及其飼主的相遇，並一瞥等待著他們的殘酷戰場。
+                    </P>
+                    <p></p>
+                </div>
 
             </div>
         </div>
-        <div class="row  ">
-            <div class="col-12  col-md-6">
-                <div class="myDiv">
-                    <img src="./pic/fs3.jpg" width="100%">
+        <!-- 最後的功能 投票-->
+        <div class="container mt-5">
+            <div class="row   ">
+                <div class="col mt-2">
+                    <h2 class="text-center fw-bolder">請投下你神聖的一票</h2>
+                </div>
+
+
+            </div>
+            <div class="row  flex-column align-items-center mt-3 ">
+                <div class="col-4 text-center">
+
+                    <h2 id="voteTitle"></h2>
+                    <!-- //年齡 -->
+                    <!-- 年收入 -->
                 </div>
             </div>
+            <div class="row  flex-column align-items-center mt-3 ">
 
-            <div class="col-12  col-md-6 ">
-                <h3 class="fw-semibold">特色3.難度非凡的頭目戰</h3>
+                <div class="col-4 ">
 
-                &emsp;&emsp;召系列作裡巨大的頭目戰回來了，這次遇到的金屬怪物將較以往都更加龐大與駭然。
-
-                「這些強敵的種類非常廣泛，有各種形狀和尺寸。」「巨型戰鬥直升機、重裝機動砲塔、還有無人駕駛的重型破壞機器，全都設定好，將無差別大肆轟炸入侵者。《機戰傭兵VI》將提供大量爆炸性的戰鬥體驗，驅使玩家突破重重困境，戰勝這些碩大無比的異形機甲。」
-
-            </div>
-        </div>
-
-        <div class="row ">
-            <div class="col-12  col-md-6">
-                <div class="myDiv">
-                    <img src="./pic/fs4.jpg" width="100%">
+                    <div class=" mt-3 ">
+                        <input class=" mybtn" type="radio" name="opt">
+                        <label id="voteLabel1">
+                            Default radio
+                        </label>
+                    </div>
                 </div>
-            </div>
+                <div class="col-4  ">
 
-            <div class="col-12  col-md-6 ">
-                <h3 class="fw-semibold">特色4.競技場回歸</h3>
-
-                &emsp;&emsp;對於《機戰傭兵》的老粉絲而言，還有更多好消息。備受喜愛的競技場模式在《機戰傭兵VI》以模擬訓練的方式回歸，玩家可以在其中與各式各樣的特製機甲進行一系列戰鬥。
-            </div>
-        </div>
-
-        <div class="row ">
-            <div class="col-12 col-md-6">
-                <div class="myDiv">
-                    <iframe width="100%" height="484" src="https://www.youtube.com/embed/UKKChvEP6gk"
-                        title="《機戰傭兵™VI 境界天火™》劇情宣傳影片" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen>
-                    </iframe>
+                    <div class=" mt-3">
+                        <input class=" mybtn" type="radio" name="opt">
+                        <label id="voteLabel2">
+                            Default checked radio
+                        </label>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12  col-md-6 ">
-                <h3 class="fw-semibold">遊戲宣傳影片展示</h3>
-                在設定為本篇故事前傳的最新劇情宣傳影片中，玩家將可以看到在指導手沃爾特的指示之下，以幾近冷酷的執念完成任務的強化人們最後的生存姿態。玩家角色及其飼主的相遇，並一瞥等待著他們的殘酷戰場。
-            </div>
+                <div class="col-4  ">
 
-        </div>
-    </div>
-    <!-- 最後的功能 投票-->
-    <div class="container mt-5">
-        <div class="row   ">
-            <div class="col mt-2">
-                <h2 class="text-center">請投下你神聖的一票</h2>
-            </div>
-
-
-        </div>
-        <div class="row  flex-column align-items-center mt-3 ">
-            <!-- //年齡 -->
-            <!-- 年收入 -->
-        </div>
-        <div class="row  flex-column align-items-center mt-3 ">
-            <div class="col-3">
-                <h2 id="voteTitle"></h2>
-                <div class=" mt-3 ">
-                    <input class=" mybtn" type="radio" name="opt">
-                    <label id="voteLabel1">
-                        Default radio
-                    </label>
+                    <div class=" mt-3">
+                        <input class=" mybtn" type="radio" name="opt" checked>
+                        <label id="voteLabel3">
+                            Default checked radio
+                        </label>
+                    </div>
                 </div>
-            </div>
-            <div class="col-3  ">
+                <div class="col-4  ">
 
-                <div class=" mt-3">
-                    <input class=" mybtn" type="radio" name="opt">
-                    <label id="voteLabel2">
-                        Default checked radio
-                    </label>
+                    <div class=" mt-3">
+                        <input class=" mybtn" type="radio" name="opt">
+                        <label id="voteLabel4">
+                            Default checked radio
+                        </label>
+                    </div>
                 </div>
-            </div>
-            <div class="col-3  ">
+                <div class="col-4  ">
 
-                <div class=" mt-3">
-                    <input class=" mybtn" type="radio" name="opt" checked>
-                    <label id="voteLabel3">
-                        Default checked radio
-                    </label>
+                    <div class=" mt-3">
+                        <input class=" mybtn" type="radio" name="opt">
+                        <label id="voteLabel5">
+                            Default checked radio
+                        </label>
+                    </div>
                 </div>
-            </div>
-            <div class="col-3  ">
-
-                <div class=" mt-3">
-                    <input class=" mybtn" type="radio" name="opt">
-                    <label id="voteLabel4">
-                        Default checked radio
-                    </label>
-                </div>
+  
             </div>
             <div class="text-center">
                 <button type="button" onclick="voteOk()" class="btn btn-primary m-3">確認</button>
@@ -292,18 +331,22 @@
 
             </div>
 
-
         </div>
+        <!-- 最後的功能 結果統計-->
+        <div class="row">
+            <div class="col-12">
 
-    </div>
-    <!-- 最後的功能 結果統計-->
-    <div class="row">
-        <div class="col-12">
-
+            </div>
         </div>
     </div>
-    </div>
+    <div class="fixed-bottom">
+        <a href="https://nagachen.github.io"><button type="button" class="btn btn-info">回GIT頁面</button></a>
 
+        <a href="#ffxvi"><button type="button" class="btn btn-light btn-sm">FFXVI</button></a>
+
+        <a href="#armored"><button type="button" class="btn btn-dark btn-sm">機戰VI</button></a>
+
+    </div>
 </body>
 
 </html>
@@ -357,6 +400,8 @@
             $('#voteLabel2').text(obj.opt2);
             $('#voteLabel3').text(obj.opt3);
             $('#voteLabel4').text(obj.opt4);
+            $('#voteLabel5').text(obj.opt5);
+
 
         })
 
