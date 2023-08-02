@@ -1,5 +1,6 @@
 <?php
 include_once "../base.php";
+
 $table = ucfirst($_POST['table']);
 $subject_id = $_POST['subject_id'];
 $title = $$table->find($subject_id);
