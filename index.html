@@ -1,3 +1,7 @@
+<!-- 這是一個有關FFXVI和機戰傭兵介紹的一頁式網頁，當使用者從上而下
+瀏灠過二款遊戲的特色後，將會進行問卷調票投票，並在投票過後顯示
+投票結果 -->
+
 <!DOCTYPE html>
 <html lang="en">
 <style>
@@ -293,22 +297,25 @@
                     
                     <div class="age">
                         <select name="age" id="age">
-                            <option value="1">
+                            <option value="null">
+                                
+                            </option>
+                            <option value="age18">
                                 18歲之前
                             </option>
-                            <option value="2">
+                            <option value="age19-24">
                                 19~24歲
                             </option>
-                            <option value="3">
+                            <option value="age25-29">
                                 25~29歲
                             </option>
-                            <option value="4">
+                            <option value="age30-44">
                                 30~44歲
                             </option>
-                            <option value="5">
+                            <option value="age45-64">
                                 45~64歲
                             </option>
-                            <option value="6">
+                            <option value="age65">
                                 65歲之後
                             </option>
                         </select>
@@ -319,26 +326,29 @@
             <!-- 年收入 -->
             <div class="row  flex-column align-items-center mt-3 ">
                 <div class="col-6 text-center">
-                    <h3 class="mb-3">請問你的收入大約落入那個範圍？</h3>
+                    <h3 class="mb-3">請問你的年收入大約落入那個範圍？</h3>
 
                     <div class="income">
                         <select name="income" id="income">
-                            <option value="1">
+                            <option value="null">
+                                
+                            </option>
+                            <option value="income30">
                                 小於30萬
                             </option>
-                            <option value="2">
+                            <option value="income30-45">
                                 30~45萬
                             </option>
-                            <option value="3">
+                            <option value="income46-59">
                                 46~59萬
                             </option>
-                            <option value="4">
+                            <option value="income59-80">
                                 59~80萬
                             </option>
-                            <option value="5">
+                            <option value="income81-100">
                                 81~100萬
                             </option>
-                            <option value="6">
+                            <option value="income100">
                                 100萬之後
                             </option>
                         </select>
@@ -352,8 +362,8 @@
                 <div class="col-6 ">
 
                     <div class=" mt-3 ">
-                        <input class=" mybtn" type="radio" name="opt">
-                        <label id="voteLabel1">
+                        <input class=" mybtn" type="radio" name="opt" id="opt1">
+                        <label for="opt1" id="voteLabel1">
                             Default radio
                         </label>
                     </div>
@@ -363,8 +373,8 @@
                 <div class="col-6  ">
 
                     <div class=" mt-3">
-                        <input class=" mybtn" type="radio" name="opt">
-                        <label id="voteLabel2">
+                        <input class=" mybtn" type="radio" name="opt" id="opt2">
+                        <label for="opt2" id="voteLabel2">
                             Default checked radio
                         </label>
                     </div>
@@ -374,8 +384,8 @@
                 <div class="col-6  ">
 
                     <div class=" mt-3">
-                        <input class=" mybtn" type="radio" name="opt" checked>
-                        <label id="voteLabel3">
+                        <input class=" mybtn" type="radio" name="opt" id="opt3">
+                        <label for="opt3" id="voteLabel3">
                             Default checked radio
                         </label>
                     </div>
@@ -385,8 +395,8 @@
                 <div class="col-6  ">
 
                     <div class=" mt-3">
-                        <input class=" mybtn" type="radio" name="opt">
-                        <label id="voteLabel4">
+                        <input class=" mybtn" type="radio" name="opt" id="opt4">
+                        <label for="opt4" id="voteLabel4">
                             Default checked radio
                         </label>
                     </div>
@@ -396,8 +406,8 @@
                 <div class="col-6  ">
 
                     <div class=" mt-3">
-                        <input class=" mybtn" type="radio" name="opt">
-                        <label id="voteLabel5">
+                        <input class=" mybtn" type="radio" name="opt" id="opt5">
+                        <label for="opt5"id="voteLabel5">
                             Default checked radio
                         </label>
                     </div>
@@ -405,7 +415,7 @@
 
             </div>
             <div class="text-center">
-                <button type="button" onclick="voteOk()" class="btn btn-primary m-3">確認</button>
+                <button type="button" onclick="Ok()" class="btn btn-primary m-3">確認</button>
                 <button type="button" onclick="voteInit()" class="btn btn-secondary">重置</button>
 
             </div>
@@ -433,13 +443,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
     integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script>
 
 
-    $(document).ready(function () {
+    // $(document).ready(function () {
         // $('#fade').fadeIn("slow");
      
         $(window).scroll(function () {
+            //移動定位變換場景
             let scrollVal = $(this).scrollTop();
             // console.log(scrollVal);
             if (scrollVal >= 450) {
@@ -452,20 +464,43 @@
                 $('.contianer').css('background-size', 'cover');
             }
         })
+        
+        function checkSelect(){
+            if($('#age').val()=='null' || $('#income').val() == 'null'||$(".mybtn[type='radio']:checked").length==0){
+               
+                alert("年紀和收入還有投票選項都需選擇")
+            }
+            
+        }
+        
+        function getValue(){
+            age=$('#age').val
+            income=$('#income').val
+            opt=$(".mybtn[type='radio']:checked").parent().children('label').text()
+            $.post("./api/get_vote.php",{age,income,opt},(res)=>{
 
-        function voteOk() {
-
+            })
 
         }
-        // $('.title')
+        function Ok() {
+            //投票按ok後要做的事
+           
+            checkSelect();
+
+            getValue()
+        }
+  
+        function init(){
+
+            // $('.title')
         voteObj = {
             table: 'vote',
             subject_id: 1,
 
         }
-
         $.post('./api/vote.php', voteObj, (res) => {
-            console.log(res);
+            //使用ajax 載入titile
+            // console.log(res);
             res = res.split(',');
             obj = {};
             res.forEach(function (value, key) {
@@ -483,8 +518,10 @@
 
 
         })
+    }
+
+    init();
 
 
-
-    })
+    // })
 </script>
