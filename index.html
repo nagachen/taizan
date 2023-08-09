@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+    select {
+        width: 100%;
+
+        text-align: center;
+        border-radius: 10px;
+    }
+</style>
 
 <head>
     <meta charset="UTF-8">
@@ -53,6 +61,9 @@
     .row {
         margin-top: 40px;
     }
+    select{
+        box-shadow: 3px 3px 1px rgb(6, 54, 70);
+    }
 </style>
 
 <body>
@@ -60,9 +71,11 @@
     <div class="container-fluid ">
         <div class="row">
             <div class="col-12   ">
-                <div class="myDiv" style="position:relative"><img src="./pic/title.jpg"  width="100%">
-                    <a href="#ffxvi" style="display:block;width:30%;height:calc(100vw * 0.65 * 0.5);position:absolute;left:10%;top:5%"></a>
-                    <a href="#armored" style="display:block;width:30%;height:calc(100vw * 0.65 * 0.5);position:absolute;right:10%;top:5%"></a>
+                <div class="myDiv" style="position:relative"><img src="./pic/title.jpg" width="100%">
+                    <a href="#ffxvi"
+                        style="display:block;width:30%;height:calc(100vw * 0.65 * 0.5);position:absolute;left:10%;top:5%"></a>
+                    <a href="#armored"
+                        style="display:block;width:30%;height:calc(100vw * 0.65 * 0.5);position:absolute;right:10%;top:5%"></a>
                 </div>
 
             </div>
@@ -263,22 +276,80 @@
         <div class="container mt-5">
             <div class="row   ">
                 <div class="col mt-2">
-                    <h2 class="text-center fw-bolder">請投下你神聖的一票</h2>
+                    <h2 class="text-center fw-bold">請投下你神聖的一票</h2>
                 </div>
 
 
             </div>
             <div class="row  flex-column align-items-center mt-3 ">
-                <div class="col-4 text-center">
-
-                    <h2 id="voteTitle"></h2>
+                <div class="col-6 text-center mb-3 fw-bolder">
+                    <h2 id="voteTitle">ttt</h2>
                     <!-- //年齡 -->
-                    <!-- 年收入 -->
                 </div>
             </div>
             <div class="row  flex-column align-items-center mt-3 ">
+                <div class="col-6 text-center">
+                    <h3 class="mb-3">請問你的年紀大約在那個範圍？</h3>
+                    
+                    <div class="age">
+                        <select name="age" id="age">
+                            <option value="1">
+                                18歲之前
+                            </option>
+                            <option value="2">
+                                19~24歲
+                            </option>
+                            <option value="3">
+                                25~29歲
+                            </option>
+                            <option value="4">
+                                30~44歲
+                            </option>
+                            <option value="5">
+                                45~64歲
+                            </option>
+                            <option value="6">
+                                65歲之後
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
 
-                <div class="col-4 ">
+            <!-- 年收入 -->
+            <div class="row  flex-column align-items-center mt-3 ">
+                <div class="col-6 text-center">
+                    <h3 class="mb-3">請問你的收入大約落入那個範圍？</h3>
+
+                    <div class="income">
+                        <select name="income" id="income">
+                            <option value="1">
+                                小於30萬
+                            </option>
+                            <option value="2">
+                                30~45萬
+                            </option>
+                            <option value="3">
+                                46~59萬
+                            </option>
+                            <option value="4">
+                                59~80萬
+                            </option>
+                            <option value="5">
+                                81~100萬
+                            </option>
+                            <option value="6">
+                                100萬之後
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row  flex-column align-items-center mt-3 ">
+
+                <div class="col-6 ">
 
                     <div class=" mt-3 ">
                         <input class=" mybtn" type="radio" name="opt">
@@ -287,7 +358,9 @@
                         </label>
                     </div>
                 </div>
-                <div class="col-4  ">
+            </div>
+            <div class="row  flex-column align-items-center mt-3 ">
+                <div class="col-6  ">
 
                     <div class=" mt-3">
                         <input class=" mybtn" type="radio" name="opt">
@@ -296,7 +369,9 @@
                         </label>
                     </div>
                 </div>
-                <div class="col-4  ">
+            </div>
+            <div class="row  flex-column align-items-center mt-3 ">
+                <div class="col-6  ">
 
                     <div class=" mt-3">
                         <input class=" mybtn" type="radio" name="opt" checked>
@@ -305,7 +380,9 @@
                         </label>
                     </div>
                 </div>
-                <div class="col-4  ">
+            </div>
+            <div class="row  flex-column align-items-center mt-3 ">
+                <div class="col-6  ">
 
                     <div class=" mt-3">
                         <input class=" mybtn" type="radio" name="opt">
@@ -314,7 +391,9 @@
                         </label>
                     </div>
                 </div>
-                <div class="col-4  ">
+            </div>
+            <div class="row  flex-column align-items-center mt-3 ">
+                <div class="col-6  ">
 
                     <div class=" mt-3">
                         <input class=" mybtn" type="radio" name="opt">
@@ -323,7 +402,7 @@
                         </label>
                     </div>
                 </div>
-  
+
             </div>
             <div class="text-center">
                 <button type="button" onclick="voteOk()" class="btn btn-primary m-3">確認</button>
@@ -358,7 +437,8 @@
 
 
     $(document).ready(function () {
-        $('#fade').fadeIn("slow");
+        // $('#fade').fadeIn("slow");
+     
         $(window).scroll(function () {
             let scrollVal = $(this).scrollTop();
             // console.log(scrollVal);
@@ -385,8 +465,7 @@
         }
 
         $.post('./api/vote.php', voteObj, (res) => {
-            // console.log(res);
-            console.log("res");
+            console.log(res);
             res = res.split(',');
             obj = {};
             res.forEach(function (value, key) {
@@ -394,7 +473,7 @@
                 obj[tmp[0]] = tmp[1];
 
             });
-            console.log(voteObj);
+            // console.log(voteObj);
             $('#voteTitle').text(obj.title);
             $('#voteLabel1').text(obj.opt1);
             $('#voteLabel2').text(obj.opt2);
