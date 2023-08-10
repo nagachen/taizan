@@ -5,8 +5,8 @@
         protected $table;
         protected $links;
         function __construct($table){
-            $this->dsn="mysql:host=localhost;chartset=utf8;dbname=taizan";
-            $this->pdo=new PDO($this->dsn,'root','');
+            $this->dsn="mysql:host=localhost;chartset=utf8;dbname=s1120208";
+            $this->pdo=new PDO($this->dsn,'s1120208','s1120208');
             $this->table=$table;
         }
 
