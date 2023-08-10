@@ -473,12 +473,15 @@
             
         }
         
-        function getValue(){
-            age=$('#age').val
-            income=$('#income').val
+        function saveValue(){
+            age=$('#age').val()
+            income=$('#income').val()
             opt=$(".mybtn[type='radio']:checked").parent().children('label').text()
-            $.post("./api/get_vote.php",{age,income,opt},(res)=>{
+           
+           
 
+            $.post("./api/save_vote.php",{age,income,opt},(res)=>{
+                console.log(res)
             })
 
         }
@@ -487,7 +490,8 @@
            
             checkSelect();
 
-            getValue()
+            saveValue()
+
         }
   
         function init(){

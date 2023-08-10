@@ -39,6 +39,7 @@
                 $keys=array_keys($arg);
                 $sql = $sql .'(`'. join('`,`',$keys) ."`) value ('".join("','",$arg)."')";
             } 
+            // echo "$sql";
             return $this->pdo->exec($sql);
         }
 
