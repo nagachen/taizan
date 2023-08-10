@@ -1,5 +1,9 @@
 <?php
 include_once "../base.php";
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: *");
+header("Access-Control-Allow-Headers: Origin, Methods, Content-Type");
+
 
 $table = ucfirst($_POST['table']);
 $subject_id = $_POST['subject_id'];
