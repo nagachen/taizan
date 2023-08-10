@@ -39,7 +39,8 @@
                 $keys=array_keys($arg);
                 $sql = $sql .'(`'. join('`,`',$keys) ."`) value ('".join("','",$arg)."')";
             } 
-            // echo "$sql";
+             echo "$sql";
+             echo "<br>";
             return $this->pdo->exec($sql);
         }
 
@@ -162,5 +163,8 @@
 
             }
             return $html;
+        }
+        function q($sql){
+            return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
         }
     }
