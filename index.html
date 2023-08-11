@@ -424,7 +424,9 @@
         </div>
         <!-- 最後的功能 結果統計-->
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 " >
+                <div class="vote" id="vote">
+                </div>
 
             </div>
         </div>
@@ -446,7 +448,8 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
-
+            showVote()
+       
 
     // $(document).ready(function () {
         // $('#fade').fadeIn("slow");
@@ -474,21 +477,36 @@
             
         }
         
-        function getValue(){
-            age=$('#age').val
-            income=$('#income').val
+        function saveValue(){
+            age=$('#age').val()
+            income=$('#income').val()
+            
             opt=$(".mybtn[type='radio']:checked").parent().children('label').text()
-            $.post("./api/get_vote.php",{age,income,opt},(res)=>{
-
+           
+           
+            //寫入DB
+            $.post("./api/save_vote.php",{age,income,opt},(res)=>{
+              
             })
 
+        }
+
+        function showVote(){
+            $.post("./api/show_vote.php",(res)=>{
+                // console.log(res)
+                jsonObject = JSON.parse(res);
+                console.log(jsonObject)
+            })
         }
         function Ok() {
             //投票按ok後要做的事
            
             checkSelect();
 
-            getValue()
+            saveValue()
+
+            showVote()
+
         }
   
         function init(){
