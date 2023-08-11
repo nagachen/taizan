@@ -501,8 +501,36 @@
             $.post("./api/show_vote.php",(res)=>{
                 //  console.log(res)
                 jsonObject = JSON.parse(res);
-                console.log(jsonObject)
-                 $("#showVote1 div:nth-child(1)").text()
+                // console.log(jsonObject)
+                const newRes=Object.entries(jsonObject);
+                 console.log(newRes)
+                let vote=[];
+                let age=[];
+                let income=[];
+                for(i=0;i<newRes.length;i++){
+                    switch(newRes[i][0].charAt(0)){
+                        case 'a':
+                        age[(newRes[i][0])]=newRes[i][1]
+                        break;
+                        case 'i':
+                        income[(newRes[i][0])]=newRes[i][1]
+                        break;
+                        default:
+                        vote[(newRes[i][0])]=newRes[i][1]
+                    }
+                }
+                //vote income age 沒有值
+                console.log(age)
+                vote.forEach((value,key,vote)=>{
+                    console.log('in')
+                    console.log(value);
+                })
+
+                // console.log(newRes);
+                $("#showVote1 div:nth-child(1)").text()
+                
+
+                 
             })
         }
         function Ok() {
