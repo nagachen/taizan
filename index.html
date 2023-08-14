@@ -507,24 +507,26 @@
                  })
                 const newRes=Object.entries(jsonObject);
                 //  console.log(newRes)
-                let vote=[];
-                let age=[];
-                let income=[];
+                let vote={};
+                let age={};
+                let income={};
                 for(i=0;i<newRes.length;i++){
                     switch(newRes[i][0].charAt(0)){
                         case 'a':
-                        age.push(newRes[i][1])
+                        age[(newRes[i][0])]=newRes[i][1]
                         break;
                         case 'i':
-                        income.push(newRes[i][1])
-
+                        income[(newRes[i][0])]=newRes[i][1]
                         break;
                         default:
                         vote[(newRes[i][0])]=newRes[i][1]
                     }
                 }
-               // vote income age //沒有值
-                 console.log(income)
+                 
+                $.each(income,function(key, value) {
+                    
+                    
+});
 
                 // vote.forEach((value,key,vote)=>{
                 //     console.log('in')
