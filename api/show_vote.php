@@ -2,13 +2,15 @@
 
 include_once "../base.php";
 
-$sql="SELECT age_level, SUM(age_vote) as age_vote FROM vote_age GROUP BY age_level";
+$sql="SELECT age_level, count(option_id) as vote FROM vote_age GROUP BY age_level";
 $ages=$Age->q($sql);
+
+//  dd($ages);
 $ageData=array();
 foreach($ages as $idx=>$age){
     foreach($age as $key =>$value){
-        //    dd($key);
-        //    dd($value);
+            //  dd($key);
+            // dd($value);
         if($key=='age_level'){
             $currentKey=$value;
         }else{
@@ -18,7 +20,9 @@ foreach($ages as $idx=>$age){
 
     }   
 }
-$sql="SELECT income_level, SUM(income_vote) as income_vote FROM vote_income GROUP BY income_level";
+//   dd($ageData);
+
+$sql="SELECT income_level, count(option_id) as vote  FROM vote_income GROUP BY income_level";
 $income=$Income->q($sql);
 $incomeData=array();
 foreach($income as $idx=>$row){
@@ -34,24 +38,28 @@ foreach($income as $idx=>$row){
 
     }   
 }
-
-$sql="SELECT option_id, SUM(income_vote) as income_vote FROM vote_income GROUP BY option_id";
+// dd($incomeData);
+$sql="SELECT option_id, count(option_id) as vote FROM vote_income GROUP BY option_id";
 $option=$Income->q($sql);
 //  dd($option);
 $optionData=array();
+
 foreach($option as $idx=>$row){
     foreach($row as $key =>$value){
-            // dd($key);
-            // dd($value);
+            //  dd($key);
+            //  dd($value);
         if($key=='option_id'){
             $currentKey=$Vote->find($value)['title'];
         }else{
 
-            $incomeData[$currentKey] = $value;
+            $optionData[$currentKey] = $value;
         }
 
     }   
 }
+// dd($optionData);
+
+
 $mergedArray = array_merge($ageData, $incomeData);
 $mergedArray = array_merge($mergedArray, $optionData);
  
