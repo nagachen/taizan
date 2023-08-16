@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 <style>
     select {
         width: 100%;
@@ -66,7 +66,8 @@
     .row {
         margin-top: 40px;
     }
-    select{
+
+    select {
         box-shadow: 3px 3px 1px rgb(6, 54, 70);
     }
 </style>
@@ -295,11 +296,11 @@
             <div class="row  flex-column align-items-center mt-3 ">
                 <div class="col-6 text-center">
                     <h3 class="mb-3">請問你的年紀在那個範圍？</h3>
-                    
+
                     <div class="age">
                         <select name="age" id="age">
                             <option value="null">
-                                
+
                             </option>
                             <option value="age18">
                                 18歲之前
@@ -332,7 +333,7 @@
                     <div class="income">
                         <select name="income" id="income">
                             <option value="null">
-                                
+
                             </option>
                             <option value="income30">
                                 小於30萬
@@ -408,7 +409,7 @@
 
                     <div class=" mt-3">
                         <input class=" mybtn" type="radio" name="opt" id="opt5">
-                        <label for="opt5"id="voteLabel5">
+                        <label for="opt5" id="voteLabel5">
                             Default checked radio
                         </label>
                     </div>
@@ -424,15 +425,11 @@
         </div>
         <!-- 最後的功能 結果統計-->
         <div class="row">
-            <div class="col-12 " >
-                <div class="vote" id="vote">
-                    <div id="showVote1" style="display:flex">
-                        <div style="width:20%">title</div>
-                        <div style="width:50%">長條圖</div>
-                        <div style="width:20%">得票數</div>
-                    </div>
-                    
-                </div>
+            <div class="col-12 d-flex justify-content-center">
+                <table class="vote" id="vote" style="width: 70%;">
+                  
+
+                </table>
 
             </div>
         </div>
@@ -454,106 +451,107 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
-            showVote()
-       
+    showVote()
 
-    // $(document).ready(function () {
-        // $('#fade').fadeIn("slow");
-     
-        $(window).scroll(function () {
-            //移動定位變換場景
-            let scrollVal = $(this).scrollTop();
-            // console.log(scrollVal);
-            if (scrollVal >= 450) {
 
-                $('.container').css("background-image", "url('./pic/back01.jpg')");
-            }
-            if (scrollVal < 450) {
 
-                $('.container').css("background-image", "url('./pic/back01.jpg')");
-                $('.contianer').css('background-size', 'cover');
-            }
+
+    $(window).scroll(function () {
+        //移動定位變換場景
+        let scrollVal = $(this).scrollTop();
+        // console.log(scrollVal);
+        if (scrollVal >= 450) {
+
+            $('.container').css("background-image", "url('./pic/back01.jpg')");
+        }
+        if (scrollVal < 450) {
+
+            $('.container').css("background-image", "url('./pic/back01.jpg')");
+            $('.contianer').css('background-size', 'cover');
+        }
+    })
+
+    function checkSelect() {
+        if ($('#age').val() == 'null' || $('#income').val() == 'null' || $(".mybtn[type='radio']:checked").length == 0) {
+
+            alert("年紀和收入還有投票選項都需選擇")
+        }
+
+    }
+
+    function saveValue() {
+        age = $('#age').val()
+        income = $('#income').val()
+
+        opt = $(".mybtn[type='radio']:checked").parent().children('label').text()
+
+
+        //寫入DB
+        $.post("./api/save_vote.php", { age, income, opt }, (res) => {
+
         })
-        
-        function checkSelect(){
-            if($('#age').val()=='null' || $('#income').val() == 'null'||$(".mybtn[type='radio']:checked").length==0){
-               
-                alert("年紀和收入還有投票選項都需選擇")
-            }
-            
-        }
-        
-        function saveValue(){
-            age=$('#age').val()
-            income=$('#income').val()
-            
-            opt=$(".mybtn[type='radio']:checked").parent().children('label').text()
-           
-           
-            //寫入DB
-            $.post("./api/save_vote.php",{age,income,opt},(res)=>{
-              
+
+    }
+
+    function showVote() {
+        $.post("./api/show_vote.php", (res) => {
+            // console.log(res)
+            jsonObject = JSON.parse(res);
+            // console.log(jsonObject)
+            $(jsonObject).each((key, value) => {
+                // console.log(value)
             })
-
-        }
-
-        function showVote(){
-            $.post("./api/show_vote.php",(res)=>{
-                console.log(res)
-                jsonObject = JSON.parse(res);
-                // console.log(jsonObject)
-                $(jsonObject).each((key,value)=>{
-                    // console.log(value)
-                 })
-                const newRes=Object.entries(jsonObject);
-                //  console.log(newRes)
-                let vote={};
-                let age={};
-                let income={};
-                for(i=0;i<newRes.length;i++){
-                    switch(newRes[i][0].charAt(0)){
-                        case 'a':
-                        age[(newRes[i][0])]=newRes[i][1]
+            const newRes = Object.entries(jsonObject);
+            //  console.log(newRes)
+            let vote = {};
+            let age = {};
+            let income = {};
+            for (i = 0; i < newRes.length; i++) {
+                switch (newRes[i][0].charAt(0)) {
+                    case 'a':
+                        age[(newRes[i][0])] = newRes[i][1]
                         break;
-                        case 'i':
-                        income[(newRes[i][0])]=newRes[i][1]
+                    case 'i':
+                        income[(newRes[i][0])] = newRes[i][1]
                         break;
-                        default:
-                        vote[(newRes[i][0])]=newRes[i][1]
-                    }
+                    default:
+                        vote[(newRes[i][0])] = newRes[i][1]
                 }
-                 
-                $.each(income,function(key, value) {
-                    
-                    
-});
+            }
+            // console.log(vote)
 
-                // vote.forEach((value,key,vote)=>{
-                //     console.log('in')
-                //     console.log(value);
-                // })
+            //計算vote 總數
+            let total=0;
+            $.each(vote, function (key, value) {total += value});
+            total=(total==0)?1:total;
+            let content = '';
+            
+            $.each(vote, function (key, value) {                
+                let rate = ((value/total) * 100).toFixed(0)+'%';
+                content =`<tr >
+                        <td style="width:45%;padding:5px;" >${key}</td>
+                        <td style="width:30%;padding:5px;" ><div style="width: ${rate};background-color: green;">${rate}</div></td>
+                        <td style="width:10%;padding:5px;" >${value}票</td>
+                        </tr>`
+            $("#vote").append(content)
+                        
+            });
+        })
+    }
+    function Ok() {
+        //投票按ok後要做的事
 
-                // console.log(newRes);
-                // $("#showVote1 div:nth-child(1)").text()
-                
+        checkSelect();
 
-                 
-            })
-        }
-        function Ok() {
-            //投票按ok後要做的事
-           
-            checkSelect();
+        saveValue()
 
-            saveValue()
+        showVote()
 
-            showVote()
+    }
 
-        }
-  
-        function init(){
+    function init() {
 
-            // $('.title')
+        // $('.title')
         voteObj = {
             table: 'vote',
             subject_id: 1,
