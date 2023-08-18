@@ -293,138 +293,142 @@
                     <!-- //年齡 -->
                 </div>
             </div>
-            <div class="row  flex-column align-items-center mt-3 ">
-                <div class="col-6 text-center">
-                    <h3 class="mb-3">請問你的年紀在那個範圍？</h3>
+            <div id="showSelect">
+                <div class="row  flex-column align-items-center mt-3">
+                    <div class="col-6 text-center">
+                        <h3 class="mb-3">請問你的年紀在那個範圍？</h3>
 
-                    <div class="age">
-                        <select name="age" id="age">
-                            <option value="null">
+                        <div class="age">
+                            <select name="age" id="age">
+                                <option value="null">
 
-                            </option>
-                            <option value="age18">
-                                18歲之前
-                            </option>
-                            <option value="age24">
-                                19~24歲
-                            </option>
-                            <option value="age29">
-                                25~29歲
-                            </option>
-                            <option value="age44">
-                                30~44歲
-                            </option>
-                            <option value="age64">
-                                45~64歲
-                            </option>
-                            <option value="age65up">
-                                65歲之後
-                            </option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 年收入 -->
-            <div class="row  flex-column align-items-center mt-3 ">
-                <div class="col-6 text-center">
-                    <h3 class="mb-3">請問你的年收入大約落入那個範圍？</h3>
-
-                    <div class="income">
-                        <select name="income" id="income">
-                            <option value="null">
-
-                            </option>
-                            <option value="income30">
-                                小於30萬
-                            </option>
-                            <option value="income45">
-                                30~45萬
-                            </option>
-                            <option value="income59">
-                                46~59萬
-                            </option>
-                            <option value="income80">
-                                59~80萬
-                            </option>
-                            <option value="income100">
-                                81~100萬
-                            </option>
-                            <option value="income100up">
-                                100萬之後
-                            </option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row  flex-column align-items-center mt-3 ">
-
-                <div class="col-6 ">
-
-                    <div class=" mt-3 ">
-                        <input class=" mybtn" type="radio" name="opt" id="opt1">
-                        <label for="opt1" id="voteLabel1">
-                            Default radio
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="row  flex-column align-items-center mt-3 ">
-                <div class="col-6  ">
-
-                    <div class=" mt-3">
-                        <input class=" mybtn" type="radio" name="opt" id="opt2">
-                        <label for="opt2" id="voteLabel2">
-                            Default checked radio
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="row  flex-column align-items-center mt-3 ">
-                <div class="col-6  ">
-
-                    <div class=" mt-3">
-                        <input class=" mybtn" type="radio" name="opt" id="opt3">
-                        <label for="opt3" id="voteLabel3">
-                            Default checked radio
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="row  flex-column align-items-center mt-3 ">
-                <div class="col-6  ">
-
-                    <div class=" mt-3">
-                        <input class=" mybtn" type="radio" name="opt" id="opt4">
-                        <label for="opt4" id="voteLabel4">
-                            Default checked radio
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="row  flex-column align-items-center mt-3 ">
-                <div class="col-6  ">
-
-                    <div class=" mt-3">
-                        <input class=" mybtn" type="radio" name="opt" id="opt5">
-                        <label for="opt5" id="voteLabel5">
-                            Default checked radio
-                        </label>
+                                </option>
+                                <option value="age18">
+                                    18歲之前
+                                </option>
+                                <option value="age24">
+                                    19~24歲
+                                </option>
+                                <option value="age29">
+                                    25~29歲
+                                </option>
+                                <option value="age44">
+                                    30~44歲
+                                </option>
+                                <option value="age64">
+                                    45~64歲
+                                </option>
+                                <option value="age65up">
+                                    65歲之後
+                                </option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
-            </div>
-            <div class="text-center">
-                <button type="button" onclick="Ok()" class="btn btn-primary m-3">確認</button>
-                <button type="button" onclick="voteInit()" class="btn btn-secondary">重置</button>
+                <!-- 年收入 -->
+                <div class="row  flex-column align-items-center mt-3 ">
+                    <div class="col-6 text-center">
+                        <h3 class="mb-3">請問你的年收入大約落入那個範圍？</h3>
 
-            </div>
+                        <div class="income">
+                            <select name="income" id="income">
+                                <option value="null">
 
+                                </option>
+                                <option value="income30">
+                                    小於30萬
+                                </option>
+                                <option value="income45">
+                                    30~45萬
+                                </option>
+                                <option value="income59">
+                                    46~59萬
+                                </option>
+                                <option value="income80">
+                                    59~80萬
+                                </option>
+                                <option value="income100">
+                                    81~100萬
+                                </option>
+                                <option value="income100up">
+                                    100萬之後
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row  flex-column align-items-center mt-3 ">
+
+                    <div class="col-6 ">
+
+                        <div class=" mt-3 ">
+                            <input class=" mybtn" type="radio" name="opt" id="opt1">
+                            <label for="opt1" id="voteLabel1">
+                                Default radio
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row  flex-column align-items-center mt-3 ">
+                    <div class="col-6  ">
+
+                        <div class=" mt-3">
+                            <input class=" mybtn" type="radio" name="opt" id="opt2">
+                            <label for="opt2" id="voteLabel2">
+                                Default checked radio
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row  flex-column align-items-center mt-3 ">
+                    <div class="col-6  ">
+
+                        <div class=" mt-3">
+                            <input class=" mybtn" type="radio" name="opt" id="opt3">
+                            <label for="opt3" id="voteLabel3">
+                                Default checked radio
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row  flex-column align-items-center mt-3 ">
+                    <div class="col-6  ">
+
+                        <div class=" mt-3">
+                            <input class=" mybtn" type="radio" name="opt" id="opt4">
+                            <label for="opt4" id="voteLabel4">
+                                Default checked radio
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row  flex-column align-items-center mt-3 ">
+                    <div class="col-6  ">
+
+                        <div class=" mt-3">
+                            <input class=" mybtn" type="radio" name="opt" id="opt5">
+                            <label for="opt5" id="voteLabel5">
+                                Default checked radio
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="text-center">
+                    <button type="button" onclick="Ok()" class="btn btn-primary m-3">確認</button>
+                    <button type="button" onclick="voteInit()" class="btn btn-secondary">重置</button>
+
+                </div>
+            </div>
         </div>
+
+        <!-- 顯示隱藏按鍵 -->
+        <button style="width: 100%;display: none;" id="showBtn" >-</button>
         <!-- 最後的功能 結果統計-->
-        <div class="row">
+        <div class="row" id="showVote" style="display:none;">
             <div class="col-12 d-flex justify-content-center">
                 <table class="vote" id="vote" style="width: 70%;">
 
@@ -438,7 +442,7 @@
             <div class="col-12 d-flex flex-column ">
                 <div class="voteAge" id="voteAge" style="width: 70%;">
                     <!-- chart js -->
-                    <canvas id="myChart" width="400" height="400"></canvas>
+                    <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
 
                 </div>
 
@@ -462,7 +466,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
-    showVote()
+
 
     $(window).scroll(function () {
         //移動定位變換場景
@@ -496,11 +500,19 @@
 
         }
     })
+    function show() {
+        $("#showSelect,#showBtn,#showVote").toggle();
+
+    }
+
 
     function checkSelect() {
         if ($('#age').val() == 'null' || $('#income').val() == 'null' || $(".mybtn[type='radio']:checked").length == 0) {
 
             alert("年紀和收入還有投票選項都需選擇")
+            return false
+        } else {
+            return true
         }
 
     }
@@ -520,6 +532,7 @@
     }
 
     function showVote() {
+        $("#vote").html('');
         $.post("./api/show_vote.php", (res) => {
             // console.log(res)
             jsonObject = JSON.parse(res);
@@ -548,65 +561,70 @@
 
             //計算vote 總數
             let total = 0;
-            $.each(vote, function (key, value) { total += value });
+            $.each(vote, function (key, value) { total += parseInt(value) });
             total = (total == 0) ? 1 : total;
             let content = '';
 
             $.each(vote, function (key, value) {
                 let rate = ((value / total) * 100).toFixed(0) + '%';
+                console.log(rate);
                 content = `<tr >
                         <td style="width:45%;padding:5px;" >${key}</td>
-                        <td style="width:30%;padding:5px;" ><div style="width: ${rate};background-color: green;">${rate}</div></td>
+                        <td style="width:30%;padding:5px;" ><div style="width: ${rate};background: green;">${rate}</div></td>
                         <td style="width:10%;padding:5px;" >${value}票</td>
                         </tr>`
                 $("#vote").append(content)
 
             });
 
-            //計算各年齡的投票參與人數
+            //計算各年齡的投票參與人數 chart js
 
-            ageDatatitle = {
-                "age18": "18歲之前",
-                "age19-24": "19-24歲",
-                "age25-29": "25-29歲",
-                "age30-44": "30-44歲",
-                "age45-64": "45-64歲",
-                "age65": "65歲以上"
-            }
-            total = 0;
-            $.each(age, function (key, value) { total += value });
-            total = (total == 0) ? 1 : total;
-            content = '';
-            console.log(age)
+            // ageDatatitle = {
+            //     "age18": "18歲之前",
+            //     "age19-24": "19-24歲",
+            //     "age25-29": "25-29歲",
+            //     "age30-44": "30-44歲",
+            //     "age45-64": "45-64歲",
+            //     "age65": "65歲以上"
+            // }
+            // total = 0;
+            // $.each(age, function (key, value) { total += value });
+            // total = (total == 0) ? 1 : total;
+            // content = '';
 
-            let ctx = document.getElementById('myChart');
-            let myChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: [ageDatatitle.age18,
-                    ageDatatitle.age19 - 24,
-                    ageDatatitle.age25 - 29,
-                    ageDatatitle.age30 - 44,
-                    ageDatatitle.age45 - 64,
-                    ageDatatitle.age65
-                    ],
-                    datasets: [{
-                        label: '各年齡的投票參與人數',
-                        data: [age.age18,age.age19-24 ,age.age25-29,age.age30-44,age.age45-64,age.age65, ]
-                    }]
-                }
-            });
+
+            // let ctx = document.getElementById('myChart');
+            // let myChart = new Chart(ctx, {
+            //     type: 'bar',
+            //     data: {
+            //         labels: [ageDatatitle.age18,
+            //         ageDatatitle.age19 - 24,
+            //         ageDatatitle.age25 - 29,
+            //         ageDatatitle.age30 - 44,
+            //         ageDatatitle.age45 - 64,
+            //         ageDatatitle.age65
+            //         ],
+            //         datasets: [{
+            //             label: '各年齡的投票參與人數',
+            //             data: [age.age18, age.age19, age.age25, age.age30, age.age45, age.age65,]
+            //         }]
+            //     }
+            // });
 
         })
     }
     function Ok() {
         //投票按ok後要做的事
 
-        checkSelect();
+        if (checkSelect()) {
+            saveValue()
 
-        saveValue()
+            showVote()
 
-        showVote()
+            show()
+        }
+
+
 
     }
 

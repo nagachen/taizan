@@ -10,11 +10,11 @@ $option_id=$Vote->find(['title'=>$_POST['opt']])['id'];
 //寫入陣列
 $age['option_id']=$option_id;
 $age['age_level']=$_POST['age'];
-$age['age_vote']=1;
+
 
 $income['option_id']=$option_id;
 $income['income_level']=$_POST['income'];
-$income['income_vote']=1;
+
 
 //寫入資料庫
 echo 'age:'.$Age->save($age);
