@@ -465,7 +465,7 @@
             <div class="col-12 d-flex flex-column ">
                 <div class="voteAge" id="voteAge" style="width: 70%;">
                     <!-- chart js -->
-                    <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
+                    <canvas id="myChart" width="250" height="250" style="margin-bottom: 30px;"></canvas>
 
                 </div>
 
@@ -609,37 +609,39 @@
 
             //計算各年齡的投票參與人數 chart js
 
-            // ageDatatitle = {
-            //     "age18": "18歲之前",
-            //     "age19-24": "19-24歲",
-            //     "age25-29": "25-29歲",
-            //     "age30-44": "30-44歲",
-            //     "age45-64": "45-64歲",
-            //     "age65": "65歲以上"
-            // }
-            // total = 0;
-            // $.each(age, function (key, value) { total += value });
-            // total = (total == 0) ? 1 : total;
-            // content = '';
+        //     ageDatatitle = {
+        //         "age18": "18歲之前",
+        //         "age19-24": "19-24歲",
+        //         "age25-29": "25-29歲",
+        //         "age30-44": "30-44歲",
+        //         "age45-64": "45-64歲",
+        //         "age65": "65歲以上"
+        //     }
+        //     total = 0;
+            
+        //     $.each(age, function (key, value) { total += value });
+        //     total = (total == 0) ? 1 : total;
+            
+        //     console.log(age)
 
 
-            // let ctx = document.getElementById('myChart');
-            // let myChart = new Chart(ctx, {
-            //     type: 'bar',
-            //     data: {
-            //         labels: [ageDatatitle.age18,
-            //         ageDatatitle.age19 - 24,
-            //         ageDatatitle.age25 - 29,
-            //         ageDatatitle.age30 - 44,
-            //         ageDatatitle.age45 - 64,
-            //         ageDatatitle.age65
-            //         ],
-            //         datasets: [{
-            //             label: '各年齡的投票參與人數',
-            //             data: [age.age18, age.age19, age.age25, age.age30, age.age45, age.age65,]
-            //         }]
-            //     }
-            // });
+        //     let ctx = document.getElementById('myChart');
+        //     let myChart = new Chart(ctx, {
+        //         type: 'bar',
+        //         data: {
+        //             labels: [ageDatatitle.age18,
+        //             ageDatatitle.age19-24,
+        //             ageDatatitle.age25-29,
+        //             ageDatatitle.age30-44,
+        //             ageDatatitle.age45-64,
+        //             ageDatatitle.age65
+        //             ],
+        //             datasets: [{
+        //                 label: '各年齡的投票參與人數',
+        //                 data: [age.age18, age.age24, age.age29, age.age44, age.age64]
+        //             }]
+        //         }
+        //     });
 
         })
     }
